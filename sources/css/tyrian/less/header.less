@@ -1,0 +1,47 @@
+.site-title {
+  #gradient > .vertical(@start-color: darken(@gentoo-purple-grey, 10%); @end-color: @gentoo-purple-grey; @end-percent: 20%);
+  background-color: @gray-lighter;
+} 
+
+.site-label {
+  .label;
+  background-color: @gentoo-purple;
+  color: white;
+}
+
+.site-title-buttons {
+  margin-top: 1em;
+  .pull-right;
+  .hidden-xs;
+}
+
+.site-title-button-group {
+  .btn-group;
+}
+
+.site-title-button-group > .btn { &:extend(.btn-sm); }
+
+.get-gentoo {
+  .btn;
+  .btn-primary;
+}
+
+.gentoo-org-sites {
+  .btn;
+  .btn-default;
+}
+
+.logo {
+  display: inline-block;
+}
+
+body {
+  border-top: 1px solid @gentoo-purple;
+}
+
+.tyrian-navbar {
+  .navbar;
+  .navbar-default;
+  .navbar-static-top;
+  .clearfix;
+}
