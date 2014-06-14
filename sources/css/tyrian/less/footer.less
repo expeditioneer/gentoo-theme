@@ -6,7 +6,14 @@ footer {
   background-image: url("../img/black-thing.png"), url("../img/znurt.png");
   background-position: right bottom, right top;
   background-repeat: no-repeat;
-} 
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  footer {
+    background-image: url('../img/black-thing@2x.png'), url("../img/znurt@2x.png");
+    background-size: 140px 17px, 107px 79px;
+  }
+}
 
 footer .row {
   margin-top: @line-height-base / 2;
