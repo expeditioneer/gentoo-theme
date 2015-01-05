@@ -65,20 +65,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-sed");
     grunt.loadNpmTasks("grunt-shell");
 
-    // Compiles tryrian sources
     grunt.registerTask("compile", ["less:compile", "replace:compile"]);
-
-    // Compresses tyrian sources
     grunt.registerTask("compress", ["less:minify"]);
+    grunt.registerTask("bootstrap", ["sed:inject_variables", "shell:build_bootstrap"]);
 
-    // Updates bootstrap, injects our custom variables, and builds bootstrap
-    grunt.registerTask("bootstrap", [ "sed:inject_variables", "shell:build_bootstrap"]);
-
-    // by default: compile and compress
-    grunt.registerTask("dist", ["compile", "compress"]);
-
-    grunt.registerTask("default", ["compile"]);
-
-    grunt.registerTask("all", ["bootstrap", "compile", "compress"]);
+    grunt.registerTask("dist", ["bootstrap", "compile", "compress"]);
+    grunt.registerTask("default", ["dist"]);
 };
 
