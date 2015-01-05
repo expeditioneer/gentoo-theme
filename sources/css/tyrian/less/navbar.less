@@ -1,0 +1,24 @@
+.navbar-stick {
+    margin-top: -@navbar-margin-bottom;
+}
+
+.navbar-grey {
+    background-color: @navbar-grey-bg;
+    border: none;
+
+    ul.nav li.active {
+        background-color: @body-bg;
+        font-weight: bold;
+    }
+
+    .navbar-toggle {
+        border-color: @navbar-grey-toggle-border-color;
+        &:hover,
+        &:focus {
+            background-color: @navbar-grey-toggle-hover-bg;
+        }
+        .icon-bar {
+            background-color: @navbar-grey-toggle-icon-bar-bg;
+        }
+    }
+}
