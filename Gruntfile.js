@@ -60,6 +60,15 @@ module.exports = function(grunt) {
                         expand: true,
                         flatten: true
                     },
+                    {
+                        cwd: 'sources/img/',
+                        src: [
+                            '*.*'
+                        ],
+                        dest: 'assets/',
+                        expand: true,
+                        flatten: true
+                    },
                 ]
             }
         }
