@@ -81,7 +81,12 @@ ul.footerlinks {
 }
 
 ul.three-icons li {
-  float: left;
-  width: 33%;
   text-align: center;
+}
+
+@media (min-width: @screen-sm-min) {
+  ul.three-icons li {
+    float: left;
+    width: 33%;
+  }
 }
