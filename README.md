@@ -13,8 +13,5 @@ See assets-cdn.txt for the URLs.
 * `emerge net-libs/nodejs` to get node.js up and running
 * `sudo npm install -g grunt-cli` to get grunt(1)
 * clone this repository (don't forget to `init` and `update` the git submodules)
-* `cd sources/css/tyrian/`
-* run `npm install`
-* `cd ../../../`
-* run `npm install`
+* run `npm install` in the repository root as well as in `sources/css/{bootstrap,tyrian}`
 * run `grunt`
