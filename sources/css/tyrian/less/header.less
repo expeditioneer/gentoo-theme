@@ -1,12 +1,15 @@
 .site-title {
   #gradient > .vertical(@start-color: darken(@gentoo-purple-grey, 10%); @end-color: @gentoo-purple-grey; @end-percent: 20%);
   background-color: @gray-lighter;
+  .noselect;
+  height: 63px;
 }
 
 .site-label {
   .label;
   background-color: @gentoo-purple;
   color: white;
+  cursor: default;
 }
 
 .site-label-svg-fix {
@@ -40,11 +43,13 @@
 
 .logo {
   display: inline-block;
+  .noselect;
+  cursor: default;
 }
 
 .site-logo {
   display: inline-block;
-  min-height: 63px;
+  height: 63px;
 
   object {
     pointer-events: none;
