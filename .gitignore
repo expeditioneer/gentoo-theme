@@ -5,3 +5,6 @@
 # Ignore these due to dynamic build process
 /package-lock.json
 /sources/css/tyrian/package-lock.json
+
+# ignore npm cache
+/npm-cacache
