@@ -1,6 +1,6 @@
-.DS_Store
-node_modules
-assets/*
+/.DS_Store
+/node_modules
+/assets/*
 
 # Ignore these due to dynamic build process
 /package-lock.json
