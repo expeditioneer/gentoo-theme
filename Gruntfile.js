@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         shell: {
             update_bootstrap: {
-                command: ['git checkout -- .', 'git pull --rebase'].join('&&'),
+                command: ['git submodule update --init --checkout', 'npm i'].join('&&'),
                 options: {
                     execOptions: {
                         cwd: 'sources/css/bootstrap/'

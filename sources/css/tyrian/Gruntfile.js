@@ -38,9 +38,7 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, flatten: true, src: ['dist/tyrian.css'], dest: 'dist/'}
                 ]
-            }
-	},
-	'string-replace': {
+            },
             inject_variables: {
 		options: {
 	                patterns: [
@@ -51,7 +49,7 @@ module.exports = function(grunt) {
 			]
 		},
                 files: [
-                    {expand: true, flatten: true, src: ['../bootstrap/less/bootstrap.less'], dest: '../bootstrap/less/'}
+			{expand: true, flatten: true, src: ['../bootstrap/less/bootstrap.less'], dest: '../bootstrap/less/'}
                 ]
             }
         },
@@ -75,7 +73,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask("compile", ["less:compile", "replace:compile"]);
     grunt.registerTask("compress", ["less:minify"]);
-    grunt.registerTask("bootstrap", ["string-replace:inject_variables", "shell:build_bootstrap"]);
+    grunt.registerTask("bootstrap", ["replace:inject_variables", "shell:build_bootstrap"]);
 
     grunt.registerTask("dist", ["bootstrap", "compile", "compress"]);
     grunt.registerTask("default", ["dist"]);
