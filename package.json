@@ -1,9 +1,11 @@
 {
     "name": "gentoo-tyrian",
     "version": "0.0.1",
+    "description": "Gentoo Tyrian theme",
+    "repository": "https://anongit.gentoo.org/git/sites/tyrian-theme.git",
     "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-copy": "~0.5.0",
-        "grunt-shell": "~0.6.4"
+        "grunt": "~1.0.4",
+        "grunt-contrib-copy": "~1.0.0",
+        "grunt-shell": "~3.0.1"
     }
 }
