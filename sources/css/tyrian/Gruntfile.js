@@ -46,7 +46,8 @@ module.exports = function(grunt) {
 					match: /@import "variables\.less";$/m,
 					replacement: '@import "variables.less"; @import "../../tyrian/bootstrap/variables-tyrian.less";'
 				}
-			]
+			],
+			silent: true
 		},
                 files: [
 			{expand: true, flatten: true, src: ['../bootstrap/less/bootstrap.less'], dest: '../bootstrap/less/'}
@@ -68,7 +69,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-replace-regex");
-    grunt.loadNpmTasks("grunt-string-replace");
     grunt.loadNpmTasks("grunt-shell");
 
     grunt.registerTask("compile", ["less:compile", "replace:compile"]);
