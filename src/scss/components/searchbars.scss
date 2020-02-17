@@ -1,0 +1,22 @@
+.inlinesearch > .input-group {
+  margin-top:1px;
+}
+
+.inlinesearch > .input-group > .input-group-prepend > span {
+  background:#61597b;
+  color:#FFF;
+  border:0px;
+}
+
+.inlinesearch > .input-group > input {
+  height:30px;
+  border:0px;
+  background:#61597b;
+  color:#FFF;
+  padding-left:0px;
+  box-shadow: none;
+}
+
+.inlinesearch > .input-group > input::placeholder {
+  color: #D3D3D3;
+}
