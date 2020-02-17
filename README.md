@@ -1,7 +1,7 @@
 tyrian
 ======
 
-Tyrian – The new look of gentoo.org
+Tyrian - The new look of gentoo.org
 
 ### Deployment
 
@@ -10,14 +10,13 @@ See assets-cdn.txt for the URLs.
 
 ### Development (local)
 
-* `emerge net-libs/nodejs` to get node.js up and running
-* `sudo npm install -g grunt-cli` to get grunt(1)
-* clone this repository (don't forget to `init` and `update` the git submodules)
-* run `npm install` in the repository root as well as in `sources/css/{bootstrap,tyrian}`
-* run `grunt`
-* Output appears in `assets/`
+* `emerge net-libs/nodejs` to get node.js up and running (you will need at least npm v6.9.0)
+* clone this repository
+* run `npm install` in the repository root
+* run `npm run dist` in the repository root
+* Output appears in `dist/`
 
 ### Development (containerized)
-* clone this repository (don't forget to `init` and `update` the git submodules)
+* clone this repository
 * run `make docker-run`
-* Output appears in `assets/`
+* Output appears in `dist/`

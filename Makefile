@@ -20,7 +20,7 @@ docker-build:
 	docker build \
 		-t $(TAG_LATEST) \
 		-t $(TAG_TS) \
-		docker/
+		.
 
 docker-run: docker-build
 	@mkdir -p $(CACHEDIR_EXT)

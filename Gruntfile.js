@@ -2,94 +2,81 @@
 // Alex Legler <a3li@gentoo.org>
 
 'use strict';
-
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        shell: {
-            update_bootstrap: {
-                command: ['git submodule update --init --checkout', 'npm i'].join('&&'),
+        less: {
+            compile: {
                 options: {
-                    execOptions: {
-                        cwd: 'sources/css/bootstrap/'
-                    }
+                    strictMath: true,
+                    paths: ["node_modules"]
+                },
+                files: {
+                    "dist/tyrian.css": "src/less/tyrian.less"
                 }
             },
-            build_tyrian_css: {
+            minify: {
+                options: {
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                files: {
+                    "dist/tyrian.min.css": "dist/tyrian.css"
+                }
+            }
+        },
+        replace: {
+            compile: {
+                options: {
+                    patterns: [
+                        {
+                            match: /^(.*\r?\n)*\/\* tyrian-start \*\/\r?\n/gm,
+                            replacement: ""
+                        }
+                    ]
+                },
+                files: [
+                    {expand: true, flatten: true, src: ['dist/tyrian.css'], dest: 'dist/'}
+                ]
+            },
+            inject_variables: {
+		options: {
+	                patterns: [
+				{
+					match: /@import "variables\.less";$/m,
+					replacement: '@import "variables.less"; @import "../../tyrian/bootstrap/variables-tyrian.less";'
+				}
+			],
+			silent: true
+		},
+                files: [
+			{expand: true, flatten: true, src: ['../bootstrap/less/bootstrap.less'], dest: '../bootstrap/less/'}
+                ]
+            }
+        },
+        shell: {
+            build_bootstrap: {
                 command: 'grunt dist',
                 options: {
                     stdout: true,
                     execOptions: {
-                        cwd: './sources/css/tyrian/'
+                        cwd: '../bootstrap/'
                     }
                 }
-            }
-        },
-        copy: {
-            copy_assets: {
-                files: [
-                    {
-                        cwd: 'sources/css/bootstrap/dist/',
-                        src: [
-                            'js/bootstrap.js',
-                            'js/bootstrap.min.js',
-                            'css/bootstrap.css',
-                            'css/bootstrap.css.map',
-                            'css/bootstrap.min.css',
-                            'fonts/*'
-                        ],
-                        dest: 'assets/',
-                        expand: true,
-                        flatten: true
-                    },
-                    {
-                        cwd: 'sources/css/tyrian/dist/',
-                        src: [
-                            '*.css'
-                        ],
-                        dest: 'assets/',
-                        expand: true,
-                        flatten: true
-                    },
-                    {
-                        cwd: 'sources/fonts/',
-                        src: [
-                            '*.*'
-                        ],
-                        dest: 'assets/',
-                        expand: true,
-                        flatten: true
-                    },
-                    {
-                        cwd: 'sources/img/',
-                        src: [
-                            '*.*'
-                        ],
-                        dest: 'assets/',
-                        expand: true,
-                        flatten: true
-                    },
-                    {
-                        cwd: 'sources/js/',
-                        src: [
-                            '*.*'
-                        ],
-                        dest: 'assets/',
-                        expand: true,
-                        flatten: true
-                    },
-                ]
             }
         }
     });
 
-    grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-replace-regex");
     grunt.loadNpmTasks("grunt-shell");
 
-    grunt.registerTask("compile", ["shell:build_tyrian_css"]);
-    grunt.registerTask("copy_assets", ["copy:copy_assets"]);
+    grunt.registerTask("compile", ["less:compile", "replace:compile"]);
+    grunt.registerTask("compress", ["less:minify"]);
+    grunt.registerTask("bootstrap", ["replace:inject_variables", "shell:build_bootstrap"]);
 
-    grunt.registerTask("default", ["compile", "copy_assets"]);
-
-    grunt.registerTask("update_bootstrap", ["shell:update_bootstrap"]);
+    grunt.registerTask("dist", ["compile", "compress"]);
+    grunt.registerTask("default", ["dist"]);
 };
+

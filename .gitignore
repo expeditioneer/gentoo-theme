@@ -1,10 +1,10 @@
-/.DS_Store
-/node_modules
-/assets/*
+.DS_Store
+node_modules
+assets
+dist
 
 # Ignore these due to dynamic build process
-/package-lock.json
-/sources/css/tyrian/package-lock.json
+package-lock.json
 
 # ignore npm cache
-/npm-cacache
+npm-cacache

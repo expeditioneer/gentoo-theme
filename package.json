@@ -1,11 +1,39 @@
 {
-    "name": "gentoo-tyrian",
-    "version": "0.0.1",
+    "name": "@gentoo/tyrian",
+    "version": "1.0.0",
     "description": "Gentoo Tyrian theme",
-    "repository": "https://anongit.gentoo.org/git/sites/tyrian-theme.git",
+    "repository": {
+        "type": "git",
+        "url": "https://anongit.gentoo.org/git/sites/tyrian-theme.git"
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
     "devDependencies": {
+        "npm-run-all": "^4.1.2",
         "grunt": "~1.0.4",
         "grunt-contrib-copy": "~1.0.0",
-        "grunt-shell": "~3.0.1"
+        "grunt-shell": "~3.0.1",
+        "grunt-contrib-less": "~2.0.0",
+        "grunt-replace-regex": "~1.0.3"
+    },
+    "scripts": {
+        "prepare": "npm run dist",
+        "dist": "npm-run-all clean:dist css:tyrian:dist copy:assets",
+        "clean:dist": "rm -rf dist && mkdir -p dist",
+        "css:tyrian:dist": "grunt",
+        "copy:assets": "npm-run-all copy:js copy:img copy:fonts copy:tyrian:assets",
+        "copy:js": "cp src/js/*.js dist",
+        "copy:img": "cp src/img/*.* dist",
+        "copy:fonts": "cp src/fonts/*.* dist",
+        "copy:tyrian:assets": "cp node_modules/bootstrap/dist/fonts/* dist && cp node_modules/bootstrap/dist/js/bootstrap.js dist && cp node_modules/bootstrap/dist/js/bootstrap.min.js dist && cp node_modules/bootstrap/dist/css/bootstrap.css dist && cp node_modules/bootstrap/dist/css/bootstrap.css.map dist && cp node_modules/bootstrap/dist/css/bootstrap.min.css dist"
+    },
+    "dependencies": {
+        "jquery": "^3.3.1",
+        "popper.js": "1.14.7",
+        "bootstrap": "3.4.1",
+        "font-awesome": "4.7.0",
+        "autoprefixer": "^7.2.4"
     }
 }
