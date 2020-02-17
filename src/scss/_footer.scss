@@ -1,11 +1,11 @@
 footer {
-  background-color: @footer-bg;
+  background-color: $footer-bg;
   color: #444;
-  border-bottom: 1px solid darken(@footer-bg, 10%);
+  border-bottom: 1px solid darken($footer-bg, 10%);
   margin-top: 2em;
   padding-top: 0.5em;
   padding-bottom: 1em;
-  .box-shadow(~"inset 0 -1px 5px 0 rgba(0,0,0,.1)");
+  box-shadow: inset 0 -1px 5px 0 rgba(0,0,0,.1);
   background-image: url('black-thing.svg'), url('znurt.svg');
   background-size: 150px, 100px;
   background-position: right bottom, right top;
@@ -13,21 +13,21 @@ footer {
   font-size: 90%;
 
   a:link, a:visited, a:active {
-    color: @gentoo-purple;
-    border-bottom: 1px solid darken(@footer-bg, 10%);
+    color: $gentoo-purple;
+    border-bottom: 1px solid darken($footer-bg, 10%);
   }
 
   a:hover {
-    border-bottom: 1px solid @gentoo-purple-light;
+    border-bottom: 1px solid $gentoo-purple-light;
     text-decoration: none;
   }
 
   .footerhead {
     margin-top: 1em;
-    font-family: @font-family-sans-serif;
+    font-family: $font-family-sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    color: darken(@footer-bg, 60%);
+    color: darken($footer-bg, 60%);
     font-size: 1.2em;
   }
 
@@ -38,7 +38,7 @@ footer {
 
 footer .row {
   margin-bottom: 1em;
-} 
+}
 
 footer small {
   font-size: 90%;
@@ -53,7 +53,7 @@ ul.footerlinks {
     list-style-type: none;
 
     a:link, a:visited {
-      color: darken(@footer-bg, 40%);
+      color: darken($footer-bg, 40%);
       border-radius: 2px;
       border: none;
       display: block;
@@ -61,14 +61,14 @@ ul.footerlinks {
     }
 
     a:hover, a:active {
-      background-color: darken(@footer-bg, 30%);
+      background-color: darken($footer-bg, 30%);
       text-decoration: none;
       color: white;
     }
   }
 
   li.divider {
-    border-top: 1px solid darken(@footer-bg, 10%);
+    border-top: 1px solid darken($footer-bg, 10%);
     margin-top: 5px;
     padding-bottom: 5px;
   }
@@ -78,9 +78,24 @@ ul.three-icons li {
   text-align: center;
 }
 
-@media (min-width: @screen-sm-min) {
+@include media-breakpoint-up(sm) {
   ul.three-icons li {
     float: left;
     width: 33%;
   }
+}
+
+
+/* Sticky footer */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+}
+
+footer {
+  margin-top: auto;
 }

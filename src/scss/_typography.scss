@@ -4,7 +4,7 @@ h1.first-header {
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
 .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
-  font-family: @font-family-sans-serif;
+  font-family: $font-family-sans-serif;
 }
 
 .stick-top {
@@ -12,11 +12,11 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
 }
 
 textarea {
-  font-family: @font-family-monospace;
+  font-family: $font-family-monospace;
 }
 
 .visited-links p > a:visited:not(.btn) {
-  color: @visited-link-color;
+  color: $visited-link-color;
 }
 
 ::selection {

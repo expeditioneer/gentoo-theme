@@ -1,0 +1,97 @@
+// Colors
+$gentoo-purple:                         #54487A;
+$gentoo-purple-light:                   #61538D;
+$gentoo-purple-light2:                  #6E56AF;
+$gentoo-purple-grey:                    #DDDAEC;
+$gentoo-green:                          #73D216;
+
+$primary:                               $gentoo-purple;
+
+$body-bg:                               #FAFAFA;
+$footer-bg:                             #E1E1E1;
+
+$link-color:                            #36B;
+$visited-link-color:                    #884888;
+
+$code-color:                            #3e355a;
+$code-bg:                               #eee;
+
+$gray-200:                              #EEEEEE;
+$breadcrumb-bg:                         #F5F5F5;
+$breadcrumb-active-color:               #777777;
+
+$text-muted:                            #777777;
+
+$card-cap-bg:                           #F5F5F5;
+
+// Layout
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1170px
+);
+
+
+// Fonts
+$headings-font-family:                  'Bitter', 'Open Sans', sans-serif;
+$headings-font-weight:                  400;
+
+$font-family-sans-serif:                "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace:                 monospace;
+
+$font-size-base:                        0.875rem;
+
+$h1-font-size:                          $font-size-base * 2.25;
+$h2-font-size:                          $font-size-base * 1.80;
+$h3-font-size:                          $font-size-base * 1.45;
+$h4-font-size:                          $font-size-base * 1.2;
+$h5-font-size:                          $font-size-base;
+$h6-font-size:                          $font-size-base * 0.85; // ~12px
+
+
+// Tables
+$table-accent-bg:                       #f1f1f1;
+$table-cell-padding:                    .5rem;
+
+
+// Dropdowns
+$dropdown-padding-y:                    .3125rem;
+$dropdown-item-padding-y:               .185rem;
+$dropdown-item-padding-x:               1.25rem;
+$zindex-dropdown:                       1001;
+
+
+// Dark navbar (purple)
+$navbar-dark-color:                     #fff;
+$navbar-dark-hover-color:               #eee;
+
+
+// Secondary navbar (grey)
+$navbar-grey-bg: #E1E1E1;
+$navbar-grey-toggle-hover-bg:           darken($navbar-grey-bg, 10%);
+$navbar-grey-toggle-icon-bar-bg:        $gentoo-purple;
+$navbar-grey-toggle-border-color:       $gentoo-purple;
+$navbar-padding-y:                      0px;
+$navbar-nav-link-padding-x:             .9375rem;
+$navbar-margin-bottom:                  20px;
+$nav-link-padding-y:                    .625rem;
+$nav-link-padding-x:                    .9375rem;
+
+
+// Breadcrumbs
+$breadcrumb-padding-y:                  .5rem;
+
+
+// Cards
+$card-spacer-x:                         0.9375rem;
+$card-spacer-y:                         0.625rem;
+
+
+// List groups
+$list-group-item-padding-x:             0.9375rem;
+$list-group-item-padding-y:             0.625rem;
+
+
+// Misc
+$border-radius-small:                   3px;

@@ -1,0 +1,90 @@
+.site-title {
+  @extend .noselect;
+  background-image: linear-gradient(to bottom, darken($gentoo-purple-grey, 10%) 0%, $gentoo-purple-grey 20%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbeb8db', endColorstr='#ffdddaec', GradientType=0);
+  background-color: #eeeeee;
+  height: 63px;
+}
+
+.site-label {
+  @extend .badge;
+  background-color: $gentoo-purple;
+  color: white;
+  cursor: default;
+  padding: 0.55em;
+  border-radius: 2.625px;
+}
+
+.site-label-svg-fix {
+  vertical-align: 225%;
+}
+
+.site-title-buttons {
+  margin-top: 1em;
+  margin-right: 1em;
+  @extend .float-right;
+}
+
+.site-title-button-group {
+  @extend .btn-group;
+}
+
+.site-title-button-group > .btn {
+  @extend .btn-sm;
+}
+
+.get-gentoo {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .d-none;
+  @extend .d-sm-block;
+}
+
+.btn-group-sm > .get-gentoo {
+  color: white;
+  padding: 5px 10px;
+}
+
+@include media-breakpoint-down(xs) {
+  .gentoo-org-sites {
+    border-top-left-radius: $border-radius-small !important;
+    border-bottom-left-radius: $border-radius-small !important;
+  }
+}
+
+
+.gentoo-org-sites:active:hover, .gentoo-org-sites.active:hover, .show > .dropdown-toggle.gentoo-org-sites:hover, .gentoo-org-sites:active:focus, .gentoo-org-sites.active:focus, .show > .dropdown-toggle.gentoo-org-sites:focus, .gentoo-org-sites:active.focus, .gentoo-org-sites.active.focus, .show > .dropdown-toggle.gentoo-org-sites.focus {
+background-color: #d4d4d4;
+border-color: #8c8c8c;
+  box-shadow: none;
+}
+
+.gentoo-org-sites:focus, .focus.get-gentoo, .focus.gentoo-org-sites {
+  box-shadow: none !important;
+}
+
+.gentoo-org-sites {
+  @extend .btn;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.logo {
+  @extend .noselect;
+  display: inline-block;
+  cursor: default;
+}
+
+.site-logo {
+  display: inline-block;
+  height: 63px;
+
+  object {
+    pointer-events: none;
+    vertical-align: middle;
+  }
+}
+
+body {
+  border-top: 1px solid $gentoo-purple;
+}

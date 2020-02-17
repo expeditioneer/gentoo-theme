@@ -1,0 +1,44 @@
+.navbar-stick {
+   margin-top: -$navbar-margin-bottom;
+}
+
+.navbar-grey {
+  background-color: $navbar-grey-bg;
+  border: none;
+
+  ul.nav li.active {
+    background-color: $body-bg;
+  }
+
+  a:link, a:visited {
+    color: #333333;
+  }
+
+  .navbar-toggler {
+      border-color: $navbar-grey-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: $navbar-grey-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: $navbar-grey-toggle-icon-bar-bg;
+    }
+  }
+}
+
+.tyrian-navbar {
+  @extend .navbar;
+  @extend .navbar-dark;
+  @extend .clearfix;
+  @extend .noselect;
+  margin-bottom: $navbar-margin-bottom;
+  background-image: linear-gradient(to bottom, #54487A 0%, #493f6a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff54487a', endColorstr='#ff493f6a', GradientType=0);
+}
+
+@include media-breakpoint-down(xs) {
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+}
