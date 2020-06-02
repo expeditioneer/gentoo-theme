@@ -1,0 +1,19 @@
+.list-group-item-additional-link {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  top: 5px;
+  z-index: 9999;
+}
+
+.list-group-item-base-link, .list-group-item-base-link:hover {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  padding: 10px 15px;
+}
