@@ -13,10 +13,3 @@
 @import "./navbar";
 @import "./header";
 @import "./footer";
-
-
-// Backwards compatibility to Tyrian v1
-
-@import "compatibility/tyrian-v1";
-@import "compatibility/social-buttons";
-@import "compatibility/fontawesome4";
